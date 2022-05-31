@@ -1,0 +1,28 @@
+# Ian Holmes
+# Ericsson PNSI Challenge
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-app-deployment-helm
+  labels:
+    app: hello-app
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: hello-app
+  template:
+    metadata:
+      labels:
+        app: hello-app
+    spec:
+      containers:
+      - name: hello-app
+        image: {{ .Values.image.name }}
+        ports:
+        - containerPort: {{ .Values.container.port }}
+        resources:
+          limits:
+            memory: "{{ .Values.resources.limits.memory }}"
+            cpu: "{{ .Values.resources.limits.cpu }}"

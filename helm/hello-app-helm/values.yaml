@@ -1,0 +1,21 @@
+# Ian Holmes
+# Ericsson PNSI Challenge
+
+replicaCount: 3
+
+image:
+  name: gcr.io/google-samples/hello-app:2.0
+
+container:
+  port: 80
+
+resources:
+  limits: 
+    memory: "32Mi"
+    cpu: "100m"
+
+service:
+  type: LoadBalancer
+  ports:
+    protocol: TCP
+    port: 8080

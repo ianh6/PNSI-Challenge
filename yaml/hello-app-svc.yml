@@ -1,0 +1,14 @@
+# Ian Holmes
+# Ericsson PNSI Challenge
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-app-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: hello-app
+  ports:
+    - protocol: TCP
+      port: 8080

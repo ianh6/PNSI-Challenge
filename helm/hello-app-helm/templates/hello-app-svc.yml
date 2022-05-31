@@ -1,0 +1,14 @@
+# Ian Holmes
+# Ericsson PNSI Challenge
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-app-service-helm
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app: hello-app
+  ports:
+    - protocol: {{ .Values.service.ports.protocol }}
+      port: {{ .Values.service.ports.port }}

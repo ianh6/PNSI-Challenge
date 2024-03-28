@@ -8,7 +8,7 @@ __
 
 ## ***Running the Project***
 
-### ***Prerquisites***
+### ***Prerequisites***
 
 - Have a running Kubernetes cluster
 - Clone this repo and navigate to the root folder
